@@ -52,48 +52,49 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BirdsOfPrey")
 	FVector TargetLocation;
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey") 
-	void ChangeWeaponType(TSubclassOf<class ABaseWeapon> NewWeaponType);
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool ChangeWeaponType(TSubclassOf<class ABaseWeapon> NewWeaponType);
 
-	UFUNCTION(BlueprintPure, Category = "BirdsOfPrey")
-	void GetWeaponSpawnTransform(FTransform& SpawnTransform);
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool GetWeaponSpawnTransform(FTransform& SpawnTransform);
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void SpawnDefaultWeapon();
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool SpawnDefaultWeapon();
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void StartFire();
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool StartFire();
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void StopFire();
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool StopFire();
 
 	using APawn::TakeDamage;
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
+
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
 	void TakeDamage(float Damage, float& ActualDamage);
 
-	UFUNCTION(BlueprintPure, Category = "BirdsOfPrey")
-	void IsAlive(bool& Alive);
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool IsAlive();
+	
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool Died(class AController* Killer);
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void Died(class AController* Killer);
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool PlayHitEffects();
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void PlayHitEffects();
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool CleanUp();
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void CleanUp();
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool ApplyAgentInfo(FSAgentInfo NewAgentInfo);
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void ApplyAgentInfo(FSAgentInfo NewAgentInfo);
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool AimAt(FVector AimTarget);
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void AimAt(FVector AimTarget);
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool PlayDeathEffects();
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void PlayDeathEffects();
-
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void CheckForOutOfBounds();
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool CheckForOutOfBounds();
 
 
 

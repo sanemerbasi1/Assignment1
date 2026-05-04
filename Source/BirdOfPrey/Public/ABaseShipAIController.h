@@ -15,6 +15,6 @@ class BIRDOFPREY_API ABaseShipAIController : public AUBaseAIController
 	GENERATED_BODY()
 	public:
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void GetMoveTarget(FVector& MoveTarget);
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "BirdsOfPrey")
+	FVector GetMoveTarget();
 };

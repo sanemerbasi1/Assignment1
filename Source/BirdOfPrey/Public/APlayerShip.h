@@ -22,28 +22,28 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BirdsOfPrey")
 	float InvulnerabilityTime;
 
-	UFUNCTION(BlueprintPure, Category = "BirdsOfPrey")
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
 	void GetShipConstantVelocity(FVector& Direction, float& Speed);
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void ClampToCameraBounds();
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool ClampToCameraBounds();
 
-	UFUNCTION(BlueprintPure, Category = "BirdsOfPrey")
-	void GetShipAxisAdjustment(float Dist, float Max, float& ReturnValue);
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	float GetShipAxisAdjustment(float Dist, float Max);
 
-	UFUNCTION(BlueprintPure, Category = "BirdsOfPrey")
-	void CalcOutOfBoundsAdjustment(FVector& ReturnValue);
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	void CalcOutOfBoundsAdjustment(FVector& Adjustment);
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void GetPlayerAgentInfo(class AUBasePlayerController* Player);
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool GetPlayerAgentInfo(class AUBasePlayerController* Player);
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void ShouldSpawnAIController();
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool ShouldSpawnAIController();
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void UpdateHoverPitch();
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool UpdateHoverPitch();
 
-	UFUNCTION(BlueprintPure, Category = "BirdsOfPrey")
-	void HasDiedRecently(bool& ReturnValue);
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool HasDiedRecently();
 	
 };

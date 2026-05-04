@@ -3,8 +3,8 @@
 
 #include "ABaseEnemyShip.h"
 
-void ABaseEnemyShip::Move()
+bool ABaseEnemyShip::Move_Implementation()
 {
-   
+    return false;
 }
 

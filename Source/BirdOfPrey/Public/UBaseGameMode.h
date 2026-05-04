@@ -53,38 +53,38 @@ class BIRDOFPREY_API AUBaseGameMode : public AGameMode
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BirdsOfPrey")
 	bool IsGameOverScreen;
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
 	void GetWorldScrollVelocity(FVector& ScrollVelocity);
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
 	void GetWorldCameraActor(class AActor*& OutWorldCameraActor);  //AWorldCameraActor
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void OnPlayerDied(class AUBasePlayerController* PlayerController); 
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool OnPlayerDied(class AUBasePlayerController* PlayerController); 
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void OnEnemyDied(class ABaseGameAgent* Enemy, class AController* Killer); 
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool OnEnemyDied(class ABaseGameAgent* Enemy, class AController* Killer); 
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void StartGame();
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool StartGame();
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void EndGame(bool Success);
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool EndGame(bool Success);
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void SpawnEnemyFrom(TArray<TSubclassOf<class ABaseGameAgent>> ClassList); 
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool SpawnEnemyFrom(const TArray<TSubclassOf<class ABaseGameAgent>>& ClassList); 
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void ResetGame();
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool ResetGame();
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void RespawnPlayer();
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool RespawnPlayer();
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void TrySpawnPowerUp(FVector Location);
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool TrySpawnPowerUp(FVector Location);
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void GetDistanceTravelled(float& ReturnValue);
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	float GetDistanceTravelled();
 
 
 };

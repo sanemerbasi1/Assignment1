@@ -32,72 +32,71 @@ void ABaseGameAgent::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
 }
 
-void ABaseGameAgent::ChangeWeaponType(TSubclassOf<ABaseWeapon> NewWeaponType)
+bool ABaseGameAgent::ChangeWeaponType_Implementation(TSubclassOf<ABaseWeapon> NewWeaponType)
 {
-	NewWeaponType = nullptr;
+	return false;
 }
 
-void ABaseGameAgent::GetWeaponSpawnTransform(FTransform& SpawnTransform)
+bool ABaseGameAgent::GetWeaponSpawnTransform_Implementation(FTransform& SpawnTransform)
 {
-	SpawnTransform = FTransform();
+	return true;
 }
 
-void ABaseGameAgent::SpawnDefaultWeapon()
+bool ABaseGameAgent::SpawnDefaultWeapon_Implementation()
 {
-	
+	return true;
 }
 
-void ABaseGameAgent::StartFire()
+bool ABaseGameAgent::StartFire_Implementation()
 {
-	
+	return true;
 }
 
-void ABaseGameAgent::StopFire()
+bool ABaseGameAgent::StopFire_Implementation()
 {
-	
+	return true;
 }
 
-void ABaseGameAgent::TakeDamage(float Damage, float& ActualDamage)
+void ABaseGameAgent::TakeDamage_Implementation(float Damage, float& ActualDamage)
 {
- Damage = 0.0f;
- ActualDamage = 0.0f;	
+	return;
 }
 
-void ABaseGameAgent::IsAlive(bool& Alive)
-{
- Alive = false;	
+bool ABaseGameAgent::IsAlive_Implementation()
+{	
+ return true;
 }
 
-void ABaseGameAgent::Died(AController* Killer)
+bool ABaseGameAgent::Died_Implementation(AController* Killer)
 {
-	Killer = nullptr;
+	return true;
 }
 
-void ABaseGameAgent::PlayHitEffects()
+bool ABaseGameAgent::PlayHitEffects_Implementation()
 {
-	
+	return true;
 }
 
-void ABaseGameAgent::CleanUp()
+bool ABaseGameAgent::CleanUp_Implementation()
 {
-	
+	return true;
 }
-void ABaseGameAgent::ApplyAgentInfo(FSAgentInfo NewAgentInfo)
+bool ABaseGameAgent::ApplyAgentInfo_Implementation(FSAgentInfo NewAgentInfo)
 {
-	NewAgentInfo = FSAgentInfo();
-}
-
-void ABaseGameAgent::AimAt(FVector Target)
-{
-	Target = FVector::ZeroVector;
+	return true;
 }
 
-void ABaseGameAgent::PlayDeathEffects()
+bool ABaseGameAgent::AimAt_Implementation(FVector Target)
 {
-	
+	return true;
 }
 
-void ABaseGameAgent::CheckForOutOfBounds()
+bool ABaseGameAgent::PlayDeathEffects_Implementation()
 {
-	
+	return true;
+}
+
+bool ABaseGameAgent::CheckForOutOfBounds_Implementation()
+{
+	return true;
 }

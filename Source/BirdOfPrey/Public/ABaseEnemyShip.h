@@ -18,6 +18,6 @@ class BIRDOFPREY_API ABaseEnemyShip : public ABaseShip
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BirdOfPrey")
 	class ABaseShipAIController* ShipAIController;
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey") 
-	void Move();
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey") 
+	bool Move();
 };

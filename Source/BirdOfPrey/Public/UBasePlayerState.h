@@ -24,12 +24,12 @@ class BIRDOFPREY_API AUBasePlayerState : public APlayerState
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BirdsOfPrey")
 	float TimeOfLastDeath;
 	
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void AddScore(float Amount);
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool AddScore(float Amount);
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void ConsumeLife();
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool ConsumeLife();
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void HasRemainingLives(bool& ReturnValue);
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool HasRemainingLives();
 };

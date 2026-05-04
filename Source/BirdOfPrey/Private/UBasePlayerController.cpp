@@ -3,12 +3,13 @@
 
 #include "UBasePlayerController.h"
 
-void AUBasePlayerController::CalcScreenDimensions()
+bool AUBasePlayerController::CalcScreenDimensions_Implementation()
 {
-
+    return true;
 }
 
-void AUBasePlayerController::OnPlayerDeath(class AController* Killer)
+bool AUBasePlayerController::OnPlayerDeath_Implementation(class AController* Killer)
 {
- Killer = nullptr;
+    Killer = nullptr;
+    return true;
 }

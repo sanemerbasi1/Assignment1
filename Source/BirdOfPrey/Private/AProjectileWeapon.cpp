@@ -3,18 +3,17 @@
 
 #include "AProjectileWeapon.h"
 
-void AProjectileWeapon::SpawnProjectile(FTransform SpawnTransform, class ABaseProjectile*& ReturnValue)
+void AProjectileWeapon::SpawnProjectile_Implementation(FTransform SpawnTransform, class ABaseProjectile*& ReturnValue)
 {
-
+    return;
 }
 
-void AProjectileWeapon::GetProjectileSpawnTransform(int32 ShotNumber, FTransform& ReturnValue)
+FTransform AProjectileWeapon::GetProjectileSpawnTransform_Implementation(int32 ShotNumber)
 {
-    ShotNumber = 0;
-
+    return FTransform::Identity;
 }
 
-void AProjectileWeapon::ReadyToFire(bool& ReturnValue)
+bool AProjectileWeapon::ReadyToFire_Implementation()
 {
-
+    return true;
 }

@@ -4,15 +4,12 @@
 #include "UBaseGameInstance.h"
 #include "FSAgentInfo.h"
 
-void UBaseGameInstance::SetPlayerAgentInfoFor(int32 PlayerControllerID, FSAgentInfo AgentInfo)
+bool UBaseGameInstance::SetPlayerAgentInfoFor_Implementation(int32 PlayerControllerID, FSAgentInfo AgentInfo)
 {
-    
+   return false;
 }
 
-FSAgentInfo UBaseGameInstance::GetPlayerAgentInfoFor(int32 PlayerControllerID, bool& Success)
+FSAgentInfo UBaseGameInstance::GetPlayerAgentInfoFor_Implementation(int32 PlayerControllerID, bool& Success)
 {
-    PlayerControllerID = 0;
-    Success = false; 
-
     return FSAgentInfo(); 
 }

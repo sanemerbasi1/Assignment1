@@ -41,32 +41,32 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BirdsOfPrey")
 	class USoundBase* ImpactSound;
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void InitialiseProjectile(FVector Direction, float Speed);
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool InitialiseProjectile(FVector Direction, float Speed);
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void DealDamageTo(class AActor* Damaging, float InDamage);
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool DealDamageTo(class AActor* Damaging, float InDamage);
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void OnHit(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor);
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool OnHit(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor);
 
-    UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void GetInstigatorCollisionChannel(TEnumAsByte<ECollisionChannel>& ReturnValue);
+   UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	ECollisionChannel GetInstigatorCollisionChannel();
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void CheckForGroundUnitTarget();
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool CheckForGroundUnitTarget();
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void ShouldCheckForGroundTarget(bool& ReturnValue);
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool ShouldCheckForGroundTarget();
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void AdjustToTarget();
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool AdjustToTarget();
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void IsEnemyProjectile(bool& ReturnValue);
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool IsEnemyProjectile();
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void AdjustToDesiredZ();
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool AdjustToDesiredZ();
 
 protected:
 	// Called when the game starts or when spawned

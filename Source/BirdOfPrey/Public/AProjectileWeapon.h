@@ -33,12 +33,12 @@ class BIRDOFPREY_API AProjectileWeapon : public ABaseWeapon
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BirdsOfPrey")
 	float DesiredZ;
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
 	void SpawnProjectile(FTransform SpawnTransform, class ABaseProjectile*& ReturnValue);
 
-	UFUNCTION(BlueprintPure, Category = "BirdsOfPrey")
-	void GetProjectileSpawnTransform(int32 ShotNumber, FTransform& ReturnValue);
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	FTransform GetProjectileSpawnTransform(int32 ShotNumber);
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void ReadyToFire(bool& ReturnValue);
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool ReadyToFire();
 };

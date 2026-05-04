@@ -21,9 +21,9 @@ public:
 UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BirdOfPrey")
 TArray<FSAgentInfo> PlayerAgentInfo;
 
-UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
-void SetPlayerAgentInfoFor(int32 PlayerControllerID, FSAgentInfo AgentInfo);
+UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdOfPrey")
+bool SetPlayerAgentInfoFor(int32 PlayerControllerID, FSAgentInfo AgentInfo);
     
-UFUNCTION(BlueprintCallable, Category = "BirdOfPrey")
+UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdOfPrey")
 FSAgentInfo GetPlayerAgentInfoFor(int32 PlayerControllerID, bool& Success);
 };

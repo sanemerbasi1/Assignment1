@@ -3,59 +3,63 @@
 
 #include "UBaseGameMode.h"
 
-void AUBaseGameMode::GetWorldScrollVelocity(FVector& ScrollVelocity)
+void AUBaseGameMode::GetWorldScrollVelocity_Implementation(FVector& ScrollVelocity)
 {
  ScrollVelocity = FVector::ZeroVector;;
 }
 
-void AUBaseGameMode::GetWorldCameraActor(class AActor*& WorldCameraActor) //AWorldCameraActor
+void AUBaseGameMode::GetWorldCameraActor_Implementation(class AActor*& WorldCameraActor) //AWorldCameraActor
 {
     WorldCameraActor = nullptr;
 }
 
-void AUBaseGameMode::OnPlayerDied(class AUBasePlayerController* PlayerController)
+bool AUBaseGameMode::OnPlayerDied_Implementation(class AUBasePlayerController* PlayerController)
 {
     PlayerController = nullptr;
+    return false;
 }
 
-void AUBaseGameMode::OnEnemyDied(class ABaseGameAgent* Enemy, class AController* Killer)
+bool AUBaseGameMode::OnEnemyDied_Implementation(class ABaseGameAgent* Enemy, class AController* Killer)
 {
     Enemy = nullptr;
     Killer = nullptr;
+    return false;
 }
 
-void AUBaseGameMode::StartGame()
+bool AUBaseGameMode::StartGame_Implementation()
 {
-
+    return false;
 }
 
-void AUBaseGameMode::EndGame(bool Success)
+bool AUBaseGameMode::EndGame_Implementation(bool Success)
 {
   Success = false;
+  return false;
 }
 
-void AUBaseGameMode::SpawnEnemyFrom(TArray<TSubclassOf<class ABaseGameAgent>> ClassList)
+bool AUBaseGameMode::SpawnEnemyFrom_Implementation(const TArray<TSubclassOf<class ABaseGameAgent>>& ClassList)
 {
-   
+    return false;
 }
 
-void AUBaseGameMode::ResetGame()
+bool AUBaseGameMode::ResetGame_Implementation()
 {
-
+    return false;
 }
 
-void AUBaseGameMode::RespawnPlayer()
+bool AUBaseGameMode::RespawnPlayer_Implementation()
 {
-
+    return false;
 }
 
-void AUBaseGameMode::TrySpawnPowerUp(FVector Location)
+bool AUBaseGameMode::TrySpawnPowerUp_Implementation(FVector Location)
 {
  Location = FVector::ZeroVector;
+ return false;
 }
 
-void AUBaseGameMode::GetDistanceTravelled(float& ReturnValue)
+float AUBaseGameMode::GetDistanceTravelled_Implementation()
 {
- ReturnValue = 0.0f;
+ return 0.0f;
 }
 

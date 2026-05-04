@@ -20,9 +20,9 @@ class BIRDOFPREY_API AUBasePlayerController : public APlayerController
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BirdsOfPrey")
 	bool bDiedWhileFiring;
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void CalcScreenDimensions();
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool CalcScreenDimensions();
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void OnPlayerDeath(class AController* Killer);
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool OnPlayerDeath(class AController* Killer);
 };

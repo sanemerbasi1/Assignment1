@@ -23,14 +23,14 @@ void AABasePowerup::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+} 
+
+bool AABasePowerup::Apply_Implementation(class AAPlayerShip* PlayerShip)
+{
+	return false;
 }
 
-void AABasePowerup::Apply(class AAPlayerShip* PlayerShip)
+bool AABasePowerup::PlayEffects_Implementation()
 {
-	PlayerShip = nullptr;
-}
-
-void AABasePowerup::PlayEffects()
-{
-
+	return false;
 }

@@ -24,32 +24,32 @@ void ABaseWeapon::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 }
-void ABaseWeapon::StartFire()
+bool ABaseWeapon::StartFire_Implementation()
 {
-	
+	return false;
 }
 
-void ABaseWeapon::StopFire()
+bool ABaseWeapon::StopFire_Implementation()
 {
-	
+	return false;
 }
 
-void ABaseWeapon::PlayFireEffect()
+bool ABaseWeapon::PlayFireEffect_Implementation()
 {
-	
+	return false;
 }
 
-void ABaseWeapon::GetFireEffectSpawnTransform(FTransform& ReturnValue)
+ FTransform ABaseWeapon::GetFireEffectSpawnTransform_Implementation()
 {
-	ReturnValue = FTransform::Identity;
+	return FTransform::Identity;
 }
 
-void ABaseWeapon::HasFinishedFiring(bool& ReturnValue)
+bool ABaseWeapon::HasFinishedFiring_Implementation()
 {
-	ReturnValue = false;
+	return false;
 }
 
-void ABaseWeapon::IsFiring(bool& ReturnValue)
+bool ABaseWeapon::IsFiring_Implementation()
 {
-	ReturnValue = false;
+	return false;
 }

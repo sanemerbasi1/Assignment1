@@ -3,17 +3,18 @@
 
 #include "UBasePlayerState.h"
 
-void AUBasePlayerState::AddScore(float Amount)
+bool AUBasePlayerState::AddScore_Implementation(float Amount)
 {
     PlayerScore = 0.0f;
+    return true;
 }
 
-void AUBasePlayerState::ConsumeLife()
+bool AUBasePlayerState::ConsumeLife_Implementation()
 {
-
+    return true;
 }
 
-void AUBasePlayerState::HasRemainingLives(bool& ReturnValue)
+bool AUBasePlayerState::HasRemainingLives_Implementation()
 {
-    ReturnValue = false;
+    return false;
 }

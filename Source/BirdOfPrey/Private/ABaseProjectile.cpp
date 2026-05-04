@@ -25,50 +25,53 @@ void ABaseProjectile::Tick(float DeltaTime)
 
 }
 
-void ABaseProjectile::InitialiseProjectile(FVector Direction, float Speed)
+bool ABaseProjectile::InitialiseProjectile_Implementation(FVector Direction, float Speed)
 {
 	Direction = FVector::ZeroVector;
 	Speed = 0.0f;
+	return false;
 }
 
-void ABaseProjectile::DealDamageTo(AActor* Damaging, float InDamage)
+bool ABaseProjectile::DealDamageTo_Implementation(AActor* Damaging, float InDamage)
 {
 	Damaging = nullptr;
 	InDamage = 0.0f;
+	return false;
 }
 
-void ABaseProjectile::OnHit(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor)
+bool ABaseProjectile::OnHit_Implementation(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor)
 {
 	OverlappedComponent = nullptr;
 	OtherActor = nullptr;
+	return false;
 }
 
-void ABaseProjectile::GetInstigatorCollisionChannel(TEnumAsByte<ECollisionChannel>& ReturnValue)
+ECollisionChannel ABaseProjectile::GetInstigatorCollisionChannel_Implementation()
 {
-	ReturnValue = ECollisionChannel::ECC_Pawn;
+	return ECollisionChannel::ECC_Pawn;
 }
 
-void ABaseProjectile::CheckForGroundUnitTarget()
+bool ABaseProjectile::CheckForGroundUnitTarget_Implementation()
 {
-	
+	return false;
 }
 
-void ABaseProjectile::ShouldCheckForGroundTarget(bool& ReturnValue)
+bool ABaseProjectile::ShouldCheckForGroundTarget_Implementation()
 {
-	ReturnValue = false;
+	return false;	
 }
 
-void ABaseProjectile::AdjustToTarget()
+bool ABaseProjectile::AdjustToTarget_Implementation()
 {
-	
+	return false;
 }
 
-void ABaseProjectile::IsEnemyProjectile(bool& ReturnValue)
+bool ABaseProjectile::IsEnemyProjectile_Implementation()
 {
-	ReturnValue = false;
+	return false;
 }
 
-void ABaseProjectile::AdjustToDesiredZ()
+bool ABaseProjectile::AdjustToDesiredZ_Implementation()
 {
-	
+	return false;
 }

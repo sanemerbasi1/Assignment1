@@ -15,11 +15,11 @@ public:
 	// Sets default values for this actor's properties
 	AABasePowerup();
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void Apply(class AAPlayerShip* PlayerShip);
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool Apply(class AAPlayerShip* PlayerShip);
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void PlayEffects();
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool PlayEffects();
 
 
 protected:

@@ -21,31 +21,31 @@ class BIRDOFPREY_API AUBaseAIController : public AAIController
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BirdOfPrey")
 	class ABaseGameAgent* ControlledAgent;
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void SelectAttack();
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool SelectAttack();
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void AimAt(FVector AimTarget);
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool AimAt(FVector AimTarget);
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void CheckFire();
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool CheckFire();
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void UpdateAim();
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool UpdateAim();
 
-	UFUNCTION(BlueprintPure, Category = "BirdsOfPrey")
-	void ShouldStartFire(bool& ReturnValue);
+	UFUNCTION(BlueprintNativeEvent, BlueprintPure, Category = "BirdsOfPrey")
+	bool ShouldStartFire();
 
-	UFUNCTION(BlueprintPure, Category = "BirdsOfPrey")
-	void ShouldStopFire(bool& ReturnValue);
+	UFUNCTION(BlueprintNativeEvent, BlueprintPure, Category = "BirdsOfPrey")
+	bool ShouldStopFire();
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void StartFire();
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool StartFire();
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void StopFire();
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool StopFire();
 
-	UFUNCTION(BlueprintPure, Category = "BirdsOfPrey")
-	void ShouldUpdateAim(bool& ReturnValue);
+	UFUNCTION(BlueprintNativeEvent, BlueprintPure, Category = "BirdsOfPrey")
+	bool ShouldUpdateAim();
 
 };

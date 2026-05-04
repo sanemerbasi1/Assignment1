@@ -21,23 +21,23 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "BirdsOfPrey")
 	bool bIsAutomatic;
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void StartFire();
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool StartFire();
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void StopFire();
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool StopFire();
 
-	UFUNCTION(BlueprintCallable, Category = "BirdsOfPrey")
-	void PlayFireEffect();
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "BirdsOfPrey")
+	bool PlayFireEffect();
 
-	UFUNCTION(BlueprintPure, Category = "BirdsOfPrey")
-	void GetFireEffectSpawnTransform(FTransform& ReturnValue);
+	UFUNCTION(BlueprintNativeEvent, BlueprintPure, Category = "BirdsOfPrey")
+	FTransform GetFireEffectSpawnTransform();
 
-	UFUNCTION(BlueprintPure, Category = "BirdsOfPrey")
-	void HasFinishedFiring(bool& ReturnValue);
+	UFUNCTION(BlueprintNativeEvent, BlueprintPure, Category = "BirdsOfPrey")
+	bool HasFinishedFiring();
 
-	UFUNCTION(BlueprintPure, Category = "BirdsOfPrey")
-	void IsFiring(bool& ReturnValue);
+	UFUNCTION(BlueprintNativeEvent, BlueprintPure, Category = "BirdsOfPrey")
+	bool IsFiring();
 
 protected:
 	// Called when the game starts or when spawned

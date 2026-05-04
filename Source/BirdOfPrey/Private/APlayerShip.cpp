@@ -3,43 +3,43 @@
 
 #include "APlayerShip.h"
 
-void AAPlayerShip::GetShipConstantVelocity(FVector& Direction, float& Speed)
+void AAPlayerShip::GetShipConstantVelocity_Implementation(FVector& Direction, float& Speed)
 {
-    Direction = FVector::ZeroVector;
-    Speed = 0.0f; 
+    return;
 }
 
-void AAPlayerShip::ClampToCameraBounds()
+bool AAPlayerShip::ClampToCameraBounds_Implementation()
 {
-
+    return false;
 }
 
-void AAPlayerShip::GetShipAxisAdjustment(float Dist, float Max, float& ReturnValue)
+float AAPlayerShip::GetShipAxisAdjustment_Implementation(float Dist, float Max)
 {
-    ReturnValue = 0.0f; 
+   return 0.0f;
 }
 
-void AAPlayerShip::CalcOutOfBoundsAdjustment(FVector& ReturnValue)
+void AAPlayerShip::CalcOutOfBoundsAdjustment_Implementation(FVector& Adjustment)
 {
-    ReturnValue = FVector::ZeroVector; 
+    return;
 }
 
-void AAPlayerShip::GetPlayerAgentInfo(class AUBasePlayerController* Player)
+bool AAPlayerShip::GetPlayerAgentInfo_Implementation(class AUBasePlayerController* Player)
 {
-  Player = nullptr;
+    return false;
 }
 
-void AAPlayerShip::ShouldSpawnAIController()
+
+bool AAPlayerShip::ShouldSpawnAIController_Implementation()
 {
-  
+    return false;
 }
 
-void AAPlayerShip::UpdateHoverPitch()
+bool AAPlayerShip::UpdateHoverPitch_Implementation()
 {
-
+    return false;
 }
 
-void AAPlayerShip::HasDiedRecently(bool& ReturnValue)
+bool AAPlayerShip::HasDiedRecently_Implementation()
 {
-    ReturnValue = false; 
+    return false;
 }

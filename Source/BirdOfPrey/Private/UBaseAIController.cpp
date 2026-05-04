@@ -3,47 +3,47 @@
 
 #include "UBaseAIController.h"
 
-void AUBaseAIController::SelectAttack()
+bool AUBaseAIController::SelectAttack_Implementation()
 {
-
+    return false;
 }
 
-void AUBaseAIController::AimAt(FVector AimTarget)
+bool AUBaseAIController::AimAt_Implementation(FVector AimTarget)
 {
-    AimTarget = FVector::ZeroVector;
+    return false;
 }
 
-void AUBaseAIController::CheckFire()
+bool AUBaseAIController::CheckFire_Implementation()
 {
-
+    return false;
 }
 
-void AUBaseAIController::UpdateAim()
+bool AUBaseAIController::UpdateAim_Implementation()
 {
-
+    return false;
 }
 
-void AUBaseAIController::ShouldStartFire(bool& ReturnValue)
+bool AUBaseAIController::ShouldStartFire_Implementation()
 {
-    ReturnValue = false;
+    return false;
 }
 
-void AUBaseAIController::ShouldStopFire(bool& ReturnValue)
+bool AUBaseAIController::ShouldStopFire_Implementation()
 {
-    ReturnValue = false;
+    return false;
 }
 
-void AUBaseAIController::StartFire()
+bool AUBaseAIController::StartFire_Implementation()
 {
-
+    return false;
 }
 
-void AUBaseAIController::StopFire()
+bool AUBaseAIController::StopFire_Implementation()
 {
-
+    return false;
 }
 
-void AUBaseAIController::ShouldUpdateAim(bool& ReturnValue)
+bool AUBaseAIController::ShouldUpdateAim_Implementation()
 {
-    ReturnValue = false;
+    return false;
 }

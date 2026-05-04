@@ -3,7 +3,7 @@
 
 #include "ABaseShipAIController.h"
 
-void ABaseShipAIController::GetMoveTarget(FVector& MoveTarget)
+FVector ABaseShipAIController::GetMoveTarget_Implementation()
 {
-    MoveTarget = FVector::ZeroVector;
+    return FVector::ZeroVector;
 }
